@@ -181,6 +181,3 @@ The largest gain came not from increasing model complexity, but from improving t
 
 Python, pandas, NumPy, scikit-learn, LightGBM, CatBoost, XGBoost, Matplotlib, Jupyter Notebook
 
-## Notes
-
-This repository is intended as a portfolio and learning project. Public ensemble experiments performed near the competition deadline are intentionally excluded from the reported independent result.
