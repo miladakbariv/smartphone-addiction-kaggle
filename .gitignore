@@ -10,6 +10,9 @@ venv/
 env/
 ENV/
 
+# Testing
+.pytest_cache/
+
 # Jupyter
 .ipynb_checkpoints/
 
