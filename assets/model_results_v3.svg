@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+  <title id="title">Independent model performance</title>
+  <desc id="desc">Clean horizontal bar chart comparing cross-validation ROC-AUC scores and the independent Kaggle public leaderboard score.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font: 700 28px Arial, sans-serif; fill: #111827; }
+    .subtitle { font: 400 16px Arial, sans-serif; fill: #4b5563; }
+    .label { font: 15px Arial, sans-serif; fill: #111827; }
+    .value { font: 700 14px Arial, sans-serif; fill: #111827; }
+    .note { font: 13px Arial, sans-serif; fill: #6b7280; }
+    .track { fill: #f3f4f6; }
+    .bar { fill: #9ca3af; }
+    .bar-final { fill: #2563eb; }
+    .bar-public { fill: #16a34a; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1000" height="500" rx="18"/>
+  <text x="48" y="46" class="title">Independent model performance</text>
+  <text x="48" y="74" class="subtitle">Kaggle Playground Series S6E8 - ROC-AUC</text>
+
+  <!-- Row 1 -->
+  <text x="48" y="128" class="label">Logistic Regression</text>
+  <rect x="380" y="108" width="420" height="26" rx="8" class="track"/>
+  <rect x="380" y="108" width="65" height="26" rx="8" class="bar"/>
+  <text x="830" y="128" class="value">0.91145 CV</text>
+
+  <!-- Row 2 -->
+  <text x="48" y="184" class="label">CatBoost</text>
+  <rect x="380" y="164" width="420" height="26" rx="8" class="track"/>
+  <rect x="380" y="164" width="305" height="26" rx="8" class="bar"/>
+  <text x="830" y="184" class="value">0.95346 CV</text>
+
+  <!-- Row 3 -->
+  <text x="48" y="240" class="label">LightGBM</text>
+  <rect x="380" y="220" width="420" height="26" rx="8" class="track"/>
+  <rect x="380" y="220" width="343" height="26" rx="8" class="bar"/>
+  <text x="830" y="240" class="value">0.96002 CV</text>
+
+  <!-- Row 4 -->
+  <text x="48" y="296" class="label">Raw XGBoost</text>
+  <rect x="380" y="276" width="420" height="26" rx="8" class="track"/>
+  <rect x="380" y="276" width="364" height="26" rx="8" class="bar"/>
+  <text x="830" y="296" class="value">0.96363 CV</text>
+
+  <!-- Row 5 -->
+  <text x="48" y="352" class="label">Final XGBoost + structural features + TE</text>
+  <rect x="380" y="332" width="420" height="26" rx="8" class="track"/>
+  <rect x="380" y="332" width="387" height="26" rx="8" class="bar-final"/>
+  <text x="830" y="352" class="value">0.96774 CV</text>
+
+  <!-- Row 6 -->
+  <text x="48" y="408" class="label">Independent Kaggle Public LB</text>
+  <rect x="380" y="388" width="420" height="26" rx="8" class="track"/>
+  <rect x="380" y="388" width="395" height="26" rx="8" class="bar-public"/>
+  <text x="830" y="408" class="value">0.96921 Public LB</text>
+
+  <text x="48" y="462" class="note">Bars are scaled from ROC-AUC 0.90 to 0.97. Blue = final CV model; green = independent Kaggle Public LB.</text>
+</svg>
