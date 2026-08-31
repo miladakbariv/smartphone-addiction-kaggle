@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project data
+data/*.csv
+data/*.parquet
+data/*.zip
+
+# Trained models and large artifacts
+models/*
+!models/.gitkeep
+
+# Kaggle submissions
+submissions/*.csv
+
+# Temporary / cache files
+.cache/
+*.log
+*.tmp
+
+# Optional local environment files
+.env
+.env.*
