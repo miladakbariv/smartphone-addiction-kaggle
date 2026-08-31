@@ -30,3 +30,21 @@ def test_structural_features_are_computed_without_mutating_input():
     assert result.loc[0, "other_screen_complete"] == 3.0
     assert np.isnan(result.loc[1, "other_screen_complete"])
     assert np.isnan(result.loc[2, "other_screen_complete"])
+
+
+def test_structural_features_keep_unknown_sums_unknown_when_all_components_missing():
+    df = pd.DataFrame(
+        {
+            "daily_screen_time_hours": [5.0],
+            "social_media_hours": [np.nan],
+            "gaming_hours": [np.nan],
+            "work_study_hours": [np.nan],
+        }
+    )
+
+    result = add_structural_features(df)
+
+    assert result.loc[0, "screen_components_observed"] == 0
+    assert np.isnan(result.loc[0, "observed_component_sum"])
+    assert np.isnan(result.loc[0, "screen_budget_slack"])
+    assert np.isnan(result.loc[0, "other_screen_complete"])
