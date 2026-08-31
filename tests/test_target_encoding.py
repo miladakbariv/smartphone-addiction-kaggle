@@ -35,6 +35,32 @@ def test_crossfit_encoding_uses_only_inner_training_rows():
     )
 
 
+def test_crossfit_encoding_uses_smoothed_full_training_map_for_seen_validation_values():
+    X_train = pd.DataFrame({"value": [1, 1, 1, 1, 2, 2, 2, 2]})
+    y_train = pd.Series([1, 1, 1, 0, 0, 0, 0, 1], index=X_train.index)
+    X_valid = pd.DataFrame({"value": [1, 2]})
+    alpha = 2.0
+
+    _, valid_new = add_crossfit_exact_te(
+        X_train,
+        y_train,
+        X_valid,
+        columns=["value"],
+        alpha=alpha,
+        n_inner_splits=2,
+        random_state=123,
+    )
+
+    global_mean = y_train.mean()
+    expected_value_1 = (3 + alpha * global_mean) / (4 + alpha)
+    expected_value_2 = (1 + alpha * global_mean) / (4 + alpha)
+
+    np.testing.assert_allclose(
+        valid_new["value_exact_te"].to_numpy(),
+        np.array([expected_value_1, expected_value_2]),
+    )
+
+
 def test_crossfit_encoding_handles_missing_values_and_does_not_mutate_inputs():
     X_train = pd.DataFrame(
         {"value": [1.0, 1.0, np.nan, np.nan, 2.0, 2.0, 3.0, 3.0]}
