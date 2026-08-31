@@ -13,6 +13,10 @@ The project focuses on building a strong, reproducible solution from the competi
 - Designed structural screen-time features and validated them with **ablation studies**
 - Compared Logistic Regression, LightGBM, CatBoost, and XGBoost under the same validation scheme
 
+## Results Snapshot
+
+![Model ROC-AUC comparison](assets/model_results.svg)
+
 ## Problem
 
 Predict whether a smartphone user belongs to the addicted class based on behavioral and demographic features such as:
