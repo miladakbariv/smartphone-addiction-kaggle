@@ -1,57 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
-  <title id="title">Model ROC-AUC comparison</title>
-  <desc id="desc">Bar chart comparing baseline and final model ROC-AUC scores for the smartphone addiction project.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+  <title id="title">Independent model performance</title>
+  <desc id="desc">Horizontal bar chart comparing cross-validation ROC-AUC scores and the independent Kaggle public leaderboard score.</desc>
   <style>
     .bg { fill: #ffffff; }
     .title { font: 700 28px Arial, sans-serif; fill: #111827; }
     .subtitle { font: 400 16px Arial, sans-serif; fill: #4b5563; }
-    .axis { font: 14px Arial, sans-serif; fill: #374151; }
     .label { font: 15px Arial, sans-serif; fill: #111827; }
     .value { font: 700 14px Arial, sans-serif; fill: #111827; }
+    .tick { font: 13px Arial, sans-serif; fill: #6b7280; }
     .note { font: 13px Arial, sans-serif; fill: #6b7280; }
     .grid { stroke: #e5e7eb; stroke-width: 1; }
     .bar { fill: #9ca3af; }
     .bar-final { fill: #2563eb; }
     .bar-public { fill: #16a34a; }
   </style>
-  <rect class="bg" x="0" y="0" width="1000" height="520" rx="18"/>
-  <text x="48" y="50" class="title">Independent model performance</text>
-  <text x="48" y="78" class="subtitle">Kaggle Playground Series S6E8 - 5-fold CV and Public LB ROC-AUC</text>
 
-  <line x1="220" y1="430" x2="950" y2="430" class="grid"/>
-  <line x1="220" y1="360" x2="950" y2="360" class="grid"/>
-  <line x1="220" y1="290" x2="950" y2="290" class="grid"/>
-  <line x1="220" y1="220" x2="950" y2="220" class="grid"/>
-  <line x1="220" y1="150" x2="950" y2="150" class="grid"/>
-  <line x1="220" y1="80" x2="950" y2="80" class="grid"/>
+  <rect class="bg" x="0" y="0" width="1000" height="500" rx="18"/>
 
-  <text x="172" y="434" class="axis">0.90</text>
-  <text x="172" y="364" class="axis">0.92</text>
-  <text x="172" y="294" class="axis">0.94</text>
-  <text x="172" y="224" class="axis">0.96</text>
-  <text x="172" y="154" class="axis">0.98</text>
-  <text x="172" y="84" class="axis">1.00</text>
+  <text x="40" y="44" class="title">Independent model performance</text>
+  <text x="40" y="72" class="subtitle">Kaggle Playground Series S6E8 - ROC-AUC</text>
 
-  <text x="48" y="126" class="label">Logistic Regression</text>
-  <text x="48" y="186" class="label">CatBoost</text>
-  <text x="48" y="246" class="label">LightGBM</text>
-  <text x="48" y="306" class="label">Raw XGBoost</text>
-  <text x="48" y="366" class="label">Final XGBoost + structural + TE</text>
-  <text x="48" y="426" class="label">Independent Kaggle Public LB</text>
+  <!-- vertical score grid: 0.90 to 0.975 -->
+  <line x1="320" y1="98" x2="320" y2="415" class="grid"/>
+  <line x1="480" y1="98" x2="480" y2="415" class="grid"/>
+  <line x1="640" y1="98" x2="640" y2="415" class="grid"/>
+  <line x1="800" y1="98" x2="800" y2="415" class="grid"/>
+  <line x1="920" y1="98" x2="920" y2="415" class="grid"/>
 
-  <rect x="220" y="102" width="80.143" height="28" rx="8" class="bar"/>
-  <rect x="220" y="162" width="374.220" height="28" rx="8" class="bar"/>
-  <rect x="220" y="222" width="420.161" height="28" rx="8" class="bar"/>
-  <rect x="220" y="282" width="445.382" height="28" rx="8" class="bar"/>
-  <rect x="220" y="342" width="474.180" height="28" rx="8" class="bar-final"/>
-  <rect x="220" y="402" width="484.470" height="28" rx="8" class="bar-public"/>
+  <text x="320" y="438" text-anchor="middle" class="tick">0.90</text>
+  <text x="480" y="438" text-anchor="middle" class="tick">0.92</text>
+  <text x="640" y="438" text-anchor="middle" class="tick">0.94</text>
+  <text x="800" y="438" text-anchor="middle" class="tick">0.96</text>
+  <text x="920" y="438" text-anchor="middle" class="tick">0.975</text>
 
-  <text x="310" y="121" class="value">0.91145 CV</text>
-  <text x="604" y="181" class="value">0.95346 CV</text>
-  <text x="650" y="241" class="value">0.96002 CV</text>
-  <text x="675" y="301" class="value">0.96363 CV</text>
-  <text x="704" y="361" class="value">0.96774 CV</text>
-  <text x="714" y="421" class="value">0.96921 Public LB</text>
+  <!-- labels -->
+  <text x="40" y="129" class="label">Logistic Regression</text>
+  <text x="40" y="184" class="label">CatBoost</text>
+  <text x="40" y="239" class="label">LightGBM</text>
+  <text x="40" y="294" class="label">Raw XGBoost</text>
+  <text x="40" y="349" class="label">Final XGBoost + structural features + TE</text>
+  <text x="40" y="404" class="label">Independent Kaggle Public LB</text>
 
-  <text x="48" y="486" class="note">Blue = best independently developed cross-validation model - Green = independently achieved Kaggle public leaderboard score</text>
+  <!-- bars, scaled from 0.90 -->
+  <rect x="320" y="108" width="91.6" height="28" rx="8" class="bar"/>
+  <rect x="320" y="163" width="427.7" height="28" rx="8" class="bar"/>
+  <rect x="320" y="218" width="480.2" height="28" rx="8" class="bar"/>
+  <rect x="320" y="273" width="509.0" height="28" rx="8" class="bar"/>
+  <rect x="320" y="328" width="541.9" height="28" rx="8" class="bar-final"/>
+  <rect x="320" y="383" width="553.7" height="28" rx="8" class="bar-public"/>
+
+  <!-- values -->
+  <text x="422" y="128" class="value">0.91145 CV</text>
+  <text x="758" y="183" class="value">0.95346 CV</text>
+  <text x="811" y="238" class="value">0.96002 CV</text>
+  <text x="839" y="293" class="value">0.96363 CV</text>
+  <text x="872" y="348" class="value">0.96774 CV</text>
+  <text x="884" y="403" class="value">0.96921 Public LB</text>
+
+  <text x="40" y="474" class="note">Blue = final cross-validation model · Green = independently achieved Kaggle public leaderboard score</text>
 </svg>
