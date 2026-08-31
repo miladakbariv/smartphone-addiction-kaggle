@@ -15,7 +15,7 @@ The project focuses on building a strong, reproducible solution from the competi
 
 ## Results Snapshot
 
-![Model ROC-AUC comparison](assets/model_results.svg)
+![Model ROC-AUC comparison](assets/model_results_v3.svg)
 
 ## Problem
 
