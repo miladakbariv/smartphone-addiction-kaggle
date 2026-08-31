@@ -4,6 +4,15 @@ An end-to-end machine learning project for the Kaggle Playground Series S6E8 bin
 
 The project focuses on building a strong, reproducible solution from the competition data itself, with particular attention to robust validation, leakage-safe feature engineering, and clear experiment tracking.
 
+## Highlights
+
+- Built an end-to-end binary classification pipeline on **691k+ training samples**
+- Improved mean CV ROC-AUC from **0.91145 to 0.96774**
+- Achieved **0.96921 Kaggle Public LB ROC-AUC** with an independently developed solution
+- Implemented **leakage-safe nested cross-fitted target encoding**
+- Designed structural screen-time features and validated them with **ablation studies**
+- Compared Logistic Regression, LightGBM, CatBoost, and XGBoost under the same validation scheme
+
 ## Problem
 
 Predict whether a smartphone user belongs to the addicted class based on behavioral and demographic features such as:
@@ -180,4 +189,3 @@ The largest gain came not from increasing model complexity, but from improving t
 ## Tech Stack
 
 Python, pandas, NumPy, scikit-learn, LightGBM, CatBoost, XGBoost, Matplotlib, Jupyter Notebook
-
